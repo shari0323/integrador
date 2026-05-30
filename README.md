@@ -1,3 +1,3 @@
-![](dashboard.png)
+![](Dashboard.png)
 
-![](cargos.png)
+![](Cargos.png)
