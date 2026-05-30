@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controller.MainController"
+            prefWidth="1400"
+            prefHeight="850"
+            style="-fx-background-color: #f4f7fb;">
+
+    <!-- MENU IZQUIERDO -->
+
+    <left>
+
+        <VBox spacing="18"
+              prefWidth="260"
+              style="-fx-background-color: #1f3c5b;">
+
+            <padding>
+                <Insets top="30"
+                        right="20"
+                        bottom="30"
+                        left="20"/>
+            </padding>
+
+            <Label text="Talento 360"
+                   style="-fx-font-size: 28px;
+                          -fx-font-weight: bold;
+                          -fx-text-fill: white;"/>
+
+            <Label text="Gobernación de Boyacá"
+                   style="-fx-font-size: 14px;
+                          -fx-text-fill: #d6e2f0;"/>
+
+            <Separator/>
+
+            <!-- DEPENDENCIAS -->
+
+            <Button text="Dependencias"
+                    fx:id="btnDashboard"
+                    prefWidth="220"
+                    prefHeight="48"
+                    style="-fx-background-color: #3498db;
+                           -fx-text-fill: white;
+                           -fx-font-size: 15px;
+                           -fx-background-radius: 10;"/>
+
+            <!-- SERVIDORES -->
+
+            <Button text="👥 Servidores Públicos"
+                    fx:id="btnServers"
+                    prefWidth="220"
+                    prefHeight="48"
+                    style="-fx-background-color: #2980b9;
+                           -fx-text-fill: white;
+                           -fx-font-size: 15px;
+                           -fx-background-radius: 10;"/>
+
+            <!-- CARGOS -->
+
+            <Button text="💼 Gestión de Cargos"
+                    fx:id="btnPositions"
+                    prefWidth="220"
+                    prefHeight="48"
+                    style="-fx-background-color: #2ecc71;
+                           -fx-text-fill: white;
+                           -fx-font-size: 15px;
+                           -fx-background-radius: 10;"/>
+
+            <!-- PERFIL -->
+
+            <Button text="🧾 Perfil"
+                    fx:id="btnProfile"
+                    prefWidth="220"
+                    prefHeight="48"
+                    style="-fx-background-color: #9b59b6;
+                           -fx-text-fill: white;
+                           -fx-font-size: 15px;
+                           -fx-background-radius: 10;"/>
+
+        </VBox>
+
+    </left>
+
+    <!-- CONTENIDO CENTRAL -->
+
+    <center>
+
+        <VBox spacing="22">
+
+            <padding>
+                <Insets top="25"
+                        right="25"
+                        bottom="25"
+                        left="25"/>
+            </padding>
+
+            <!-- TITULO -->
+
+            <Label text="Dashboard General"
+                   style="-fx-font-size: 32px;
+                          -fx-font-weight: bold;
+                          -fx-text-fill: #2c3e50;"/>
+
+            <!-- TARJETAS -->
+
+            <HBox spacing="20">
+
+                <VBox spacing="8"
+                      prefWidth="240"
+                      style="-fx-background-color: #3498db;
+                             -fx-background-radius: 15;">
+
+                    <padding>
+                        <Insets top="20"
+                                right="20"
+                                bottom="20"
+                                left="20"/>
+                    </padding>
+
+                    <Label text="👥 Servidores"
+                           style="-fx-text-fill: white;
+                                  -fx-font-size: 16px;
+                                  -fx-font-weight: bold;"/>
+
+                    <Label text="128"
+                           style="-fx-text-fill: white;
+                                  -fx-font-size: 34px;
+                                  -fx-font-weight: bold;"/>
+
+                </VBox>
+
+                <VBox spacing="8"
+                      prefWidth="240"
+                      style="-fx-background-color: #2ecc71;
+                             -fx-background-radius: 15;">
+
+                    <padding>
+                        <Insets top="20"
+                                right="20"
+                                bottom="20"
+                                left="20"/>
+                    </padding>
+
+                    <Label text="💼 Cargos"
+                           style="-fx-text-fill: white;
+                                  -fx-font-size: 16px;
+                                  -fx-font-weight: bold;"/>
+
+                    <Label text="35"
+                           style="-fx-text-fill: white;
+                                  -fx-font-size: 34px;
+                                  -fx-font-weight: bold;"/>
+
+                </VBox>
+
+                <VBox spacing="8"
+                      prefWidth="240"
+                      style="-fx-background-color: #9b59b6;
+                             -fx-background-radius: 15;">
+
+                    <padding>
+                        <Insets top="20"
+                                right="20"
+                                bottom="20"
+                                left="20"/>
+                    </padding>
+
+                    <Label text="🏢 Dependencias"
+                           style="-fx-text-fill: white;
+                                  -fx-font-size: 16px;
+                                  -fx-font-weight: bold;"/>
+
+                    <Label text="12"
+                           style="-fx-text-fill: white;
+                                  -fx-font-size: 34px;
+                                  -fx-font-weight: bold;"/>
+
+                </VBox>
+
+            </HBox>
+
+            <!-- GRAFICA -->
+
+            <VBox spacing="15"
+                  VBox.vgrow="ALWAYS"
+                  style="-fx-background-color: white;
+                         -fx-background-radius: 15;
+                         -fx-border-color: #dfe6ee;
+                         -fx-border-radius: 15;">
+
+                <padding>
+                    <Insets top="20"
+                            right="20"
+                            bottom="20"
+                            left="20"/>
+                </padding>
+
+                <Label text="Distribución por Dependencias"
+                       style="-fx-font-size: 20px;
+                              -fx-font-weight: bold;
+                              -fx-text-fill: #2c3e50;"/>
+
+                <PieChart fx:id="chartDependencies"
+                          prefHeight="450"/>
+
+            </VBox>
+
+        </VBox>
+
+    </center>
+
+</BorderPane>

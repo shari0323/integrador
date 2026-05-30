@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controller.PublicServerController">
+
+    <padding>
+        <Insets top="20" right="25" bottom="20" left="25"/>
+    </padding>
+
+    <Label text="Sistema de Gestión de Servidores Públicos"
+           style="-fx-font-size: 26px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+
+    <GridPane hgap="15" vgap="12">
+        <Label text="Cédula"       GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtIdNumber" promptText="Cédula"
+                   GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+        <Label text="Nombres"      GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+        <TextField fx:id="txtFirstName" promptText="Nombres"
+                   GridPane.rowIndex="0" GridPane.columnIndex="3"/>
+
+        <Label text="Apellidos"    GridPane.rowIndex="0" GridPane.columnIndex="4"/>
+        <TextField fx:id="txtLastName" promptText="Apellidos"
+                   GridPane.rowIndex="0" GridPane.columnIndex="5"/>
+
+        <Label text="Fecha Nac."   GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <DatePicker fx:id="dpBirthDate"
+                    GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+        <Label text="Género"       GridPane.rowIndex="1" GridPane.columnIndex="2"/>
+        <ComboBox fx:id="cbGender" maxWidth="1.7976931348623157E308"
+                  GridPane.rowIndex="1" GridPane.columnIndex="3"/>
+
+        <Label text="Est. Civil"   GridPane.rowIndex="1" GridPane.columnIndex="4"/>
+        <ComboBox fx:id="cbMaritalStatus" maxWidth="1.7976931348623157E308"
+                  GridPane.rowIndex="1" GridPane.columnIndex="5"/>
+
+        <Label text="Tipo Sangre"  GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <ComboBox fx:id="cbBloodType" maxWidth="1.7976931348623157E308"
+                  GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+        <Label text="Email Personal" GridPane.rowIndex="2" GridPane.columnIndex="2"/>
+        <TextField fx:id="txtPersonalEmail" promptText="correo@gmail.com"
+                   GridPane.rowIndex="2" GridPane.columnIndex="3"/>
+
+        <Label text="Email Inst."  GridPane.rowIndex="2" GridPane.columnIndex="4"/>
+        <TextField fx:id="txtInstitutionalEmail" promptText="correo@usta.edu.co"
+                   GridPane.rowIndex="2" GridPane.columnIndex="5"/>
+
+        <Label text="Teléfono"     GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtPhone" promptText="Teléfono"
+                   GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+        <Label text="Tipo Empleo"  GridPane.rowIndex="3" GridPane.columnIndex="2"/>
+        <ComboBox fx:id="cbEmploymentType" maxWidth="1.7976931348623157E308"
+                  GridPane.rowIndex="3" GridPane.columnIndex="3"/>
+    </GridPane>
+
+    <TableView fx:id="table" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colId"        text="ID"       prefWidth="80"/>
+            <TableColumn fx:id="colIdNumber"  text="Cédula"   prefWidth="130"/>
+            <TableColumn fx:id="colFirstName" text="Nombres"  prefWidth="220"/>
+            <TableColumn fx:id="colLastName"  text="Apellidos" prefWidth="220"/>
+            <TableColumn fx:id="colPhone"     text="Teléfono" prefWidth="150"/>
+        </columns>
+    </TableView>
+
+    <HBox spacing="15" alignment="CENTER_RIGHT">
+
+        <padding>
+            <Insets top="10"/>
+        </padding>
+
+        <Button text="Guardar"
+                onAction="#save"
+                style="-fx-background-color: #2ecc71; -fx-text-fill: white; -fx-pref-width: 130; -fx-font-size: 14px;"/>
+
+        <Button text="Eliminar"
+                onAction="#delete"
+                style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-pref-width: 130; -fx-font-size: 14px;"/>
+    </HBox>
+
+</VBox>

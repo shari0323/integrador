@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="controller.ProfileController"
+      spacing="15"
+      style="-fx-background-color: #f4f7fb;">
+
+    <padding>
+        <Insets top="20"
+                right="25"
+                bottom="20"
+                left="25"/>
+    </padding>
+
+    <Label text="Gestión de Perfil"
+           style="-fx-font-size: 28px;
+                  -fx-font-weight: bold;
+                  -fx-text-fill: #2c3e50;"/>
+
+    <GridPane hgap="15"
+              vgap="12">
+
+        <Label text="Nombre"
+               GridPane.rowIndex="0"
+               GridPane.columnIndex="0"/>
+
+        <TextField fx:id="txtName"
+                   promptText="Nombre"
+                   GridPane.rowIndex="0"
+                   GridPane.columnIndex="1"/>
+
+        <Label text="Código"
+               GridPane.rowIndex="0"
+               GridPane.columnIndex="2"/>
+
+        <TextField fx:id="txtCode"
+                   promptText="Código"
+                   GridPane.rowIndex="0"
+                   GridPane.columnIndex="3"/>
+
+        <Label text="Grado"
+               GridPane.rowIndex="1"
+               GridPane.columnIndex="0"/>
+
+        <TextField fx:id="txtGrade"
+                   promptText="Grado"
+                   GridPane.rowIndex="1"
+                   GridPane.columnIndex="1"/>
+
+    </GridPane>
+
+    <TableView fx:id="table"
+               VBox.vgrow="ALWAYS">
+
+        <columns>
+
+            <TableColumn fx:id="colId"
+                         text="ID"
+                         prefWidth="70"/>
+
+            <TableColumn fx:id="colName"
+                         text="Nombre"
+                         prefWidth="220"/>
+
+            <TableColumn fx:id="colCode"
+                         text="Código"
+                         prefWidth="180"/>
+
+            <TableColumn fx:id="colGrade"
+                         text="Grado"
+                         prefWidth="180"/>
+
+        </columns>
+
+    </TableView>
+
+    <HBox spacing="15"
+          alignment="CENTER_RIGHT">
+
+        <padding>
+            <Insets top="10"/>
+        </padding>
+
+        <Button text="Guardar"
+                onAction="#save"
+                style="-fx-background-color: #2ecc71;
+                       -fx-text-fill: white;
+                       -fx-pref-width: 130;
+                       -fx-font-size: 14px;"/>
+
+        <Button text="Eliminar"
+                onAction="#delete"
+                style="-fx-background-color: #e74c3c;
+                       -fx-text-fill: white;
+                       -fx-pref-width: 130;
+                       -fx-font-size: 14px;"/>
+
+    </HBox>
+
+</VBox>
